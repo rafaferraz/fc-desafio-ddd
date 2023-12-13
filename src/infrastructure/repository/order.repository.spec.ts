@@ -134,6 +134,13 @@ describe("Order repository test", () => {
                     quantity: orderItem.quantity,
                     order_id: order.id,
                     product_id: product.id
+                }, {
+                    id: orderItem2.id,
+                    name: orderItem2.name,
+                    price: orderItem2.price,
+                    quantity: orderItem2.quantity,
+                    order_id: order.id,
+                    product_id: product2.id
                 }
             ]
         });
