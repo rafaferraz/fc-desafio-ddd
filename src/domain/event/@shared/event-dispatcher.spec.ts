@@ -150,11 +150,11 @@ describe("Domain event tests", () => {
 
         eventDispatcher.register("CustomerCreatedEvent", firstMessageCustomerCreatedEventHandler);
         eventDispatcher.register("CustomerCreatedEvent", secondMessageCustomerCreatedEventHandler);
-        eventDispatcher.register("CustomerAddressChanged", addressChangedEventHandler);
+        eventDispatcher.register("CustomerAddressChangedEvent", addressChangedEventHandler);
 
         expect(eventDispatcher.getEventHandlers["CustomerCreatedEvent"][0]).toMatchObject(firstMessageCustomerCreatedEventHandler);
         expect(eventDispatcher.getEventHandlers["CustomerCreatedEvent"][1]).toMatchObject(secondMessageCustomerCreatedEventHandler);
-        expect(eventDispatcher.getEventHandlers["CustomerAddressChanged"][0]).toMatchObject(addressChangedEventHandler);
+        expect(eventDispatcher.getEventHandlers["CustomerAddressChangedEvent"][0]).toMatchObject(addressChangedEventHandler);
     
         const customer = new Customer('123', 'Customer 1');
         const customerCreatedEvent = new CustomerCreatedEvent({
